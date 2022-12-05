@@ -1,0 +1,103 @@
+
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+}
+
+.container{
+    margin-top: 64px;
+}
+
+
+.inner{
+    max-width: 1920px;
+    /* min-width: 768px; */
+    /* width: 100%; */
+    padding: 0 104px 0 98px;
+    margin: 0 auto;
+}
+/* section .inner{ */
+[class*="sc-"] .inner{
+    max-width: 1200px;
+    box-sizing: content-box;
+}
+
+
+
+
+/* 공통이미지 */
+.header .logo a,
+.sc-search fieldset .search-wrap::before,
+.sc-teams .team-item .count::before,
+.sc-board a .btn,
+.navigation-area .prev,
+.navigation-area .next,
+.navigation-area .prev.swiper-button-disabled,
+.navigation-area .next.swiper-button-disabled,
+.footer .site-wrap::before,
+/* mobile */
+.pop-search .search-box .btn-search::after,
+.filter-list .arrow
+    {
+        background-image: url('../images/sp_pc.png');
+        background-repeat: no-repeat;
+        background-size: 328px 205px;
+    }
+
+
+
+@media (max-width:1230px) {
+    .gnb .btn-menu,
+    .gnb .btn-menu.on,
+    .header .logo a,
+    .header .side-nav .side-item a .ic-allow,
+    .sc-search .btn-job::after,
+    .pop-search .btn-close,
+    
+    .sc-teams .team-item .count::before,
+    .footer .site-wrap::before
+        {
+        background-image: url('../images/sp_mo.png');
+        background-repeat: no-repeat;
+        background-size: 195px 181px;
+    }
+
+.container{
+    margin-top: 60px;
+}
+
+}
+
+
+
+
+@media (max-width:1230px) {
+    
+
+    .inner{
+        padding: 0 50px;
+    }
+}
+
+/* 
+    테블릿 1024
+    768을보고잡으면 끝.
+*/
+@media (max-width:1024px) {
+    .inner{
+        padding: 0 22px;
+    }
+}
+/* 
+    모바일 767  분기가 여러개일수있음
+    320을보고잡으면 끝.
+
+*/
+@media (max-width:767px) {
+ 
+    
+}

@@ -1,0 +1,381 @@
+@import './typo.css';
+@import './reset.css';
+@import './common.css';
+
+
+
+/* header 공통 */
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1020;
+}
+.header.on::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 182px;
+    top: 100%;
+    background: rgba(255, 255, 255, 0.98);
+}
+
+
+.header .inner{
+    display: flex;
+    padding: 0 104px 0 98px;
+    height: 64px;
+}
+.header .logo{
+    display: flex;
+    align-items: center;
+}
+.header .logo a{
+    display: block;
+    background-position: -105px 0;
+    width: 223px; height: 35px;
+}
+
+
+.gnb{ display: flex; flex: 1; justify-content: space-between; 
+    
+}
+.gnb .gnb-list{ display: flex; }
+.gnb .gnb-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.gnb .gnb-list .gnb-item a{
+    display: block;
+    padding: 0 10px;
+    font-size: 17px;
+    line-height: 32px;
+    letter-spacing: -0.36px; 
+}
+.gnb .gnb-list .gnb-item a span, .gnb .util-item span{
+    position: relative;
+}
+.gnb .gnb-list .gnb-item a span:hover::before,
+.gnb .util-item a span:hover::before{
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: #000;
+}
+
+
+
+/* header 개별 */
+.gnb .gnb-list{ margin-left: 29px; }
+.gnb .util-list{ margin-left: auto; }
+
+.gnb-list .sub-list{
+    position: absolute;
+    left: 0;
+    height: 182px;
+    top: 100%;
+    display: none;
+    
+    padding-top: 15px;
+    white-space: nowrap;
+}
+.gnb-list .sub-list.on{
+    display: block;
+}
+.gnb-list .sub-list li{
+    padding: 3px 13px;
+}
+.gnb-list .sub-list li a{
+    display: block;
+    margin-left: auto;
+    
+    font-size: 17px;
+    line-height: 32px;
+    letter-spacing: -0.36px;
+}
+
+.gnb .util-list{display: flex; align-items: center;gap: 20px;}
+.gnb .util-item{}
+
+.gnb .btn-menu{display: none;}
+.side-nav{visibility: hidden;}
+
+
+
+
+
+/* footer 공통 */
+.footer{
+    position: relative;
+    background: #f2f2f2;
+}
+.footer .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 104px 25px 98px;
+    height: 94px;
+}
+
+.footer .link-navercorp{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: -0.32px;
+}
+.footer .link-policy{
+    margin-right: auto;
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.28px;
+    font-weight: bold;
+    margin-left: 30px;
+    color: #909090;
+}
+.footer .site-wrap{
+    display: flex;
+    width: 280px; height: 42px;
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    font-weight: normal;
+}
+.footer .site-wrap::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    background-position: -122px -93px;
+    width: 10px;
+    height: 6px;
+    z-index: 100;
+    
+    transform: translateY(0%) rotate(0deg);
+}
+.footer .site-wrap::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #000;
+}
+.footer .site-wrap.active{
+    background: #fff;
+    padding: 0 12px;
+}
+.footer .site-wrap.active::before{
+    transform: translateY(0%) rotate(180deg);
+    margin-right: 12px;
+}
+.footer .site-wrap.active::after{
+    content: none;
+}
+
+.footer .site-wrap.active .site-item:hover{
+    background: #f2f2f2;
+}
+.footer .site-wrap .site-list{
+    display: none;
+    position: absolute;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: auto;
+    bottom: 100%;
+    z-index: 1;
+}
+.footer .site-wrap .site-item{
+    padding: 0 12px;
+    font-size: 18px;
+    line-height: 42px;
+    font-weight: bold;
+}
+.footer .site-wrap .site-item a{
+    display: block;
+}
+
+
+
+
+
+
+
+/* 
+    방법1
+        꾸미고싶은 css밑에다가 추가(scss)
+    방법2*
+        css 파일들의 가장 최하단에 적용(css)
+    방법3
+        분기별 css파일을 만들어서 link로 불러옴
+*/
+
+/* 팁! 
+    1.항상 최소기준을 보고 작업을한다.
+*/
+
+/* 
+    작은pc  분기가 여러개일수있음
+    1025px을 잡으면끝.
+*/
+@media (max-width:1230px) {
+    .header .inner{
+        padding: 0 22px;
+        height: 60px;
+    }
+    .gnb{
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .gnb .gnb-list,
+    .gnb .util-list{display: none;}
+
+    .gnb .btn-menu{
+        display: block;
+        background-position: -85px -28px;
+        width: 20px;
+        height: 14px;
+    }
+    .gnb .btn-menu.on{
+        display: block;
+        background-position: -85px -49px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .header .side-nav{
+        position: fixed;
+        top: 60px;
+        background: #fff;
+        height: calc(100vh - 60px);
+        right: -100%;
+        width: 100%;
+        visibility: hidden;
+        transition: 0.5s;
+    }
+    .header .side-nav.on{
+        display: block;
+        visibility: visible;
+        right: 0;
+    }
+    .header .logo a{
+        background-position: 0px 0px;
+        width: 160px;
+        height: 23px;
+    }
+
+    .header .side-nav .side-list{
+        padding: 11px 0 9px;
+        position: relative;
+    }
+    .header .side-nav .side-list::after{
+        content: '';
+        position: absolute;
+        bottom: 0; left: 22px; right: 22px;
+        height: 1px;
+        background-color: #d0d0d0;
+    }
+    .header .side-nav .side-item{
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 46px;
+        letter-spacing: -0.44px;
+    }
+    .header .side-nav .side-item a{
+        display: block;
+        padding: 0 22px;
+    }
+    .header .side-nav .side-item a .ic-allow{
+        display: inline-block;
+        vertical-align: top;
+        margin: 20px 0 0 10px;
+        background-position: -136px -49px;
+        width: 10px;
+        height: 6px;
+    }
+    .header .side-nav .side-item.on a{
+        background: #f2f2f2;
+    }
+    .header .side-nav .side-item.on .ic-allow{
+        transform: translateY(0%) rotate(180deg);
+    }
+    .header .side-nav .side-item .sub-list{
+        display: none;
+    }
+    .header .side-nav .side-item .sub-list.on{
+        display: block;
+        padding: 3px 22px 15px;
+    }
+    .header .side-nav .side-item .sub-list li{
+        margin-top: 13px;
+    }
+    .header .side-nav .side-item .sub-list a{
+        padding-left: 20px;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.36px;
+        background-color: #fff;
+        font-weight: bold;
+    }
+}
+
+/* 
+    테블릿 1024
+    768을보고잡으면 끝.
+*/
+@media (max-width:1024px) {
+    .footer .inner{padding: 0 22px;}
+}
+/* 
+    모바일 767  분기가 여러개일수있음
+    320을보고잡으면 끝.
+
+*/
+@media (max-width:767px) {
+    .footer{padding: 25px 0 29px;}
+    .footer .inner{
+        display: block;
+    }
+    .footer .link-navercorp{
+        font-size: 15px;
+        line-height: 22px;
+        letter-spacing: -0.3px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .footer .link-policy{
+        margin: initial;
+        margin-left: 21px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .footer .site-wrap{
+        width: 100%;
+        margin-top: 15px;
+        font-size: 12px;
+        color: #1d1d1d;
+    }
+    .footer .site-wrap::before{
+        top: 20px;
+        right: -2px;
+        background-position: -136px -49px;
+    }
+    .footer .site-wrap::after{
+        background-color: #b4b4b4;
+    }
+    .footer .site-wrap .site-list{
+        bottom: 40px;
+    }
+    .footer .site-wrap .site-item{
+        font-size: 12px;
+        color: #1d1d1d;
+    }
+}

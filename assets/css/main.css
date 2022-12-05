@@ -1,0 +1,672 @@
+/* main common */
+section .section_title{ font-size: 64px; line-height: 71px; letter-spacing: -0.64px; margin-bottom: 20px; font-weight: bold; }
+section .section_text{ font-size: 22px; padding-right: 30px; font-weight: bold; display: inline-block; }
+
+section .title{ font-size: 25px; line-height: 36px; font-weight: bold; letter-spacing: -0.5px; padding-right: 30px;}
+section .info-box{ position: relative; margin-top: 29px; }
+
+.link-more{ position: relative; display: inline-block; vertical-align: top; font-size: 14px; line-height: 18px; font-weight: normal; letter-spacing: -0.36px; }
+.link-more::before{ content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #000; }
+section .info-box .link-more{margin-top: 4px;}
+.navigation-area{
+    position: absolute; bottom: 0; right: 0;
+    display: flex;
+    gap: 7px;
+}
+.navigation-area .btn-nav{ width: 33px; height: 32px; background-position: -187px -172px; }
+.navigation-area .next{ transform: rotate(180deg); }
+.navigation-area .swiper-button-disabled{ opacity: 0.5; }
+
+
+/* 인트로 영상 */
+.sc-intro{
+    position: relative;
+    background: #ccc;
+}
+.sc-intro .video-box{
+    width: 100%; height: 544px;
+    object-fit: cover;
+    display: block;
+}
+.sc-intro .text-box{
+    /* width: 100%; */
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center;
+}
+.sc-intro .text-box .text{
+    padding: 20px;
+    font-size: 100px;
+    font-weight: 800;
+    letter-spacing: -2.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 6px 6px 18px rgba(0, 0, 0, 16%);
+    animation: fadeout 0.2s linear forwards;
+} 
+.sc-intro .text-box .text .mo_br{display: none;}
+.intro .swiper-slide.swiper-slide-active .text{
+    opacity: 0;
+    animation: wavein 0.3s ease-out forwards, fadein 0.8s linear forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes wavein {
+    0% {width: 0%;}
+    50% {width: 50%;}
+    100% {width: 100%;}
+}
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+
+/* 검색 영역 - 공통 */
+.sc-search{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.sc-search fieldset{
+    position: relative; 
+    display: flex; align-items: center;
+     height: 54px; background: #fff;
+     border-style: none; font-size: 14px;
+    }
+.sc-search fieldset .search-wrap{
+     display: flex;
+     flex: 1;
+}
+.sc-search fieldset .title{ font-size: 14px; font-weight: bold;  line-height: 54px;}
+.sc-search input,select{ border-style: none; appearance: none; }
+
+
+/* 검색 영역 - 개별 */
+.sc-search fieldset .search-wrap::before{ 
+    content: '';
+    display: inline-block;
+    background-position: -245px -40px;
+    width: 18px;
+    height: 18px;
+    margin: 18px 21px 18px 28px;
+}
+.sc-search fieldset .input-box{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.sc-search fieldset .input-box .title{
+    margin-right: 9px;
+}
+.sc-search fieldset .input-box .search_input{
+    flex: 1;
+    padding-right: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 54px;
+    outline: none;
+}
+.sc-search fieldset .input-box .search_input::placeholder{
+    color: #d0d0d0;
+}
+.sc-search fieldset .select-box{
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    
+    
+}
+.sc-search fieldset .select-box::after{
+    content: '';
+    display: inline-block;
+    width: 20px; height: 10px;
+    z-index: 1;
+    background-image: url('../images/ico_arrow_down.png');
+    background-position: calc(100% - 10px) center;
+    background-repeat: no-repeat;
+    background-size: 8px 5px;
+}
+.sc-search fieldset .select-box .select_unit{
+    position: relative;
+    flex: 1;
+}
+.sc-search fieldset .select-box .select_unit .select_box{
+    width: 100%;
+    padding: 0 25px 0 9px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 54px;
+    letter-spacing: -0.3px;
+    color: #d0d0d0;
+    outline: none;
+}
+
+.sc-search .btn-search{
+    width: 97px;
+    height: 54px;
+    line-height: 54px;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    flex-shrink: 0;
+
+}
+.sc-search .btn-search:hover{ background: #16ef7e; color: #000; }
+
+.sc-search .form2{display: none;}
+
+.pop-search{display: none;}
+
+
+/* Teams 영역 */
+.sc-teams{
+    padding-top: 126px;
+    padding-bottom: 89px;
+    background: #fafafa;
+}
+.sc-teams .team-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+.sc-teams .team-item{
+    width: 100%;
+    display: flex;
+}
+.sc-teams .team-item:hover{
+    background: #ebebeb;
+}
+.sc-teams .team-item a{
+    display: block;
+    flex: 1;
+    padding: 20px 0;
+}
+.sc-teams .team-item .title-box{
+    padding: 20px 0;
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+.sc-teams .team-item .team-title{
+    font-size: 38px;
+    line-height: 60px;
+    letter-spacing: -0.34px;
+    font-weight: bold;
+    vertical-align: top;
+    display: inline-block;
+}
+.sc-teams .team-item .count{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 13px;
+    margin-left: 18px;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+}
+.sc-teams .team-item .count::before{
+    content: '';
+    position: absolute;
+    top: -1px; right: -14px;
+    background-position: -176px -105px;
+    width: 9px; height: 9px;
+}
+.sc-teams .team-item .team-desc{
+    display: inline-block;
+    width: 49%;
+    padding: 20px 0 20px 15px;
+    vertical-align: top;
+    font-size: 22px;
+    line-height: 60px;
+    letter-spacing: -0.44px;
+    margin: inherit;
+}
+
+
+/* people 영역 */
+.sc-people{
+    padding-top: 95px;
+    overflow: hidden;
+}
+
+.sc-people .people{ margin-top: 60px; padding-bottom: 68px;overflow:initial}
+.sc-people .people .img-box{
+    position: relative;
+    padding-bottom: 47.403%;
+    max-width: 100%;
+}
+.sc-people .people .img-box img{
+    display: block;
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    width: 100%; height: 100%; object-fit: cover;
+}
+.sc-people .info-box .name{
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.28px;
+    font-weight: normal;
+}
+.sc-people .info-box .theme_title{
+    position: relative;
+    padding-right: 26px;
+}
+.sc-people .info-box .name .bar{
+    display: inline-block;
+    width: 1px; height: 10px;
+    background: #000;
+    margin: 0 6px;
+}
+.sc-people .info-box .link-more{
+    position: absolute;
+    top: 0; right: auto;
+}
+
+
+
+.sc-benefits{
+    padding-top: 112px;
+}
+.sc-benefits .benefits{
+    margin-top: 60px;
+    padding-bottom: 68px;
+}
+.sc-benefits .benefits .img-box{
+    position: relative;
+    padding-bottom: 100%;
+}
+.sc-benefits .benefits .img-box img{
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.sc-benefits .desc{
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: -0.36px;
+}
+
+
+
+.sc-board{
+    padding: 95px 0 102px;
+}
+.sc-board a{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 18px;
+    font-size: 18px;
+}
+.sc-board a .btn{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 11px;
+    background-position: -76px -172px;
+    width: 33px; height: 32px;
+}
+
+
+
+@media (max-width:1230px) {
+    .sc-intro{
+    }
+
+    /*  */
+    .sc-intro .text-box .text{
+        font-size: 80px;
+    }
+
+
+
+
+
+    /*  */
+    .sc-benefits .desc br{display: none;}
+
+
+}
+
+/* 
+    테블릿 1024
+    768을보고잡으면 끝.
+*/
+@media (max-width:1024px) {
+      /* intro */
+    .sc-intro .text-box .text{
+        font-size: 60px;
+    }
+     /* search */
+    .sc-search {
+        padding: 22px 0;
+        transform: translateY(0%);
+    }
+    .sc-search .btn-job{
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 10px 45px 10px 10px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -0.28px;
+        color: #696868;
+        font-weight: bold;
+        background-color: #ebebeb;
+        box-sizing: border-box;
+        
+    }
+    .sc-search .btn-job::after{
+        position: absolute;
+        right: 0; top: 0;
+        content: '';
+        display: inline-block;
+        background-position: -140px -125px;
+        width: 19px;
+        height: 19px;
+        margin: 12px 10px 11px;
+    }
+    .sc-search #form1{display: none;}
+    .sc-search .form2{display: block;}
+
+    /* Search Jobs 팝업 창 */
+    .pop-search{
+        visibility: hidden;
+        position: fixed;
+        top: 0; left: 0; bottom: 0;
+        width: 100%;
+        background: #fff;
+        padding: 60px 32px;
+        z-index: 1020;
+        overflow-y: scroll;
+    }
+    .pop-search.on{
+        display: block;
+        visibility: visible;
+    }
+    .pop-search .btn-close{
+        position: absolute;
+        top: 24px;
+        left: 22px;
+        background-position: -110px -28px;
+        width: 14px;
+        height: 14px;
+    }
+    .pop-search .search-box{
+        position: relative;
+        border-bottom: 1px solid #d0d0d0;
+    }
+    .pop-search .search-box #search{
+        line-height: 26px;
+        text-align: left;
+        letter-spacing: -0.28px;
+        width: 100%;
+        padding: 6px 30px 6px 0;
+        font-size: 14px;
+        border: none;
+    }
+    .pop-search .search-box #search:focus{outline: none;}
+    .pop-search .search-box #search::placeholder{
+        font-weight: bold; font-size: 14px;
+        color: rgba(0,0,0,0.2);
+    }
+    .pop-search .search-box .btn-search{
+        position: absolute;
+        bottom: 0; right: 0;
+        padding: 8px 0; width: 15px;
+    }
+    .pop-search .search-box .btn-search::after{
+        display: inline-block;
+        content: '';
+        background-position: -268px -40px;
+        width: 15px; height: 15px;
+    }
+
+
+   /* filter 공통 */
+    .filter-box{
+        position: relative;
+    }
+    .filter-list{
+        margin-top: 45px;
+    }
+    .filter-list .title{
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 26px;
+        letter-spacing: -0.28px;
+    }
+    .filter-list .list{
+        margin-top: 8px;
+    }
+    .filter-list .list .item{
+        margin-top: 14px;
+    }
+    .filter-list .btn-item{
+        position: relative;
+        text-align: left;
+    }
+    .filter-list .name{
+        /* position: relative; */
+        display: inline-block;
+        padding-left: 19px;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: -0.28px;
+        font-weight: normal;
+    }
+    .filter-list button{
+        position: relative;
+    }
+    .filter-list .arrow{
+        position: absolute;
+        top: 10px; left: 0;
+        width: 8px; height: 5px;
+        background-position: -136px -93px;
+        
+    }
+    .filter-list .btn-item.on .arrow,
+    .filter-list .btn-sub.on .arrow
+        {
+        transform: rotate(-180deg);
+    }
+    
+
+    .filter-list input{
+        appearance: none;
+    }
+    .filter-list .text{
+        padding-left: 9px;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: -0.28px;
+        font-weight: normal;
+    }
+    .filter-list .item label:before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #d0d0d0;
+        display: inline-block;
+    }
+    .filter-list .item input:checked+label:before{
+        background: #000; 
+        border: 1px solid #fff;     
+    }
+
+    .filter-box .btn-clear{
+        margin-top: 42px;
+        position: relative;
+        top: auto;
+        right: auto;
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: -0.24px;
+        font-weight: bold;
+    }
+    .filter-box .btn-clear::before{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #000;
+    }
+
+    /* filter 열기/닫기  */
+    .filter-list .sub-list{
+        display: none;
+    }
+    .filter-list .sub-list.on{
+        display: block;
+    }
+    .filter-list .sub-list .item{
+        padding-left: 20px;
+    }
+    .filter-list .item-list{
+        display: none;
+    }
+    .filter-list .item-list.on{
+        display: block;
+    }
+}
+/* 
+    모바일 767  분기가 여러개일수있음
+    320을보고잡으면 끝.
+
+*/
+@media (max-width:767px) {
+
+
+    /* 인트로 */
+    .sc-intro .video-box{
+        height: 62.4vw;
+    }
+    .intro .swiper-slide.swiper-slide-active .text{
+        font-size: 40px;
+        line-height: 50px;
+        letter-spacing: -0.8px;
+    }
+    .sc-intro .text-box .text .mo_br{
+        display: block;
+    }
+    
+
+    /* 메인 공통 */
+    section .section_title{
+        font-size: 36px;
+        line-height: 50px;
+        letter-spacing: -0.7px;
+        margin-bottom: 11px;
+    }
+    section .section_text{
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+        margin-bottom: 9px;
+        padding-right: 20px;
+    }
+    .link-more{
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: -0.24px;
+    }
+    .link-more::before{
+        bottom: 2px;
+    }
+
+    section .title{
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.36px;
+    }
+    [class*="sc-"] .inner{
+        padding: 0 22px;
+    }
+
+
+    /* 메인 개별 */
+    .sc-teams{
+        padding-top: 100px;
+    }
+    .sc-teams .team-list{
+        margin-top: 40px;
+    }
+    .sc-teams .team-item .title-box{
+        width: 100%;
+        padding: 0;
+    }
+    .sc-teams .team-item .team-title{
+        font-size: 24px;
+        line-height: 38px;
+        letter-spacing: -0.48px;
+    }
+    .sc-teams .team-item .count{
+        margin: 4px 0 0 14px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -0.28px;
+    }
+    .sc-teams .team-item .count::before{
+        top: 1px;
+        background-position: -129px -28px;
+        width: 11px; height: 11px;
+    }
+    .sc-teams .team-item .team-desc{
+        display: block;
+        width: 100%;
+        margin-top: 1px;
+        padding: 0;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+    }
+    .sc-people{
+        padding-top: 85px;
+    }
+    .sc-people .people{
+        margin-top: 40px;
+    }
+    .sc-people .people .img-box{
+        padding-bottom: 100%;
+    }
+    .sc-people .info-box .link-more{
+        display: none;
+    }
+    .sc-benefits{
+        padding-top: 85px;
+    }
+    .sc-benefits .benefits{
+        margin-top: 40px;
+    }
+    .sc-benefits .desc{
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: -0.28px;
+        margin-top: 3px;
+    }
+    .sc-board a{
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+    }
+
+}
