@@ -7,4 +7,4 @@ button {background:none;border:0;cursor:pointer;}
 a {text-decoration:none;}
 ul{list-style: none;}
 table {border-collapse:collapse;border-spacing:0;}
-body{font-family: "TTHoves", "NanumSquare", "나눔스퀘어", "돋움", dotum, arial, sans-serif;}
+body{width: 100vw; font-family: "TTHoves", "NanumSquare", "나눔스퀘어", "돋움", dotum, arial, sans-serif;}
